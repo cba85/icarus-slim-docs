@@ -29,6 +29,8 @@ src/
 └── routes.php
 tests/
 tmp/
+├── logs/
+└── views/
 .editorconfig
 .env.example
 .gitignore

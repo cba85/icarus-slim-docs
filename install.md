@@ -15,7 +15,7 @@ This file must be created based on the `.env.example` file.
 Create a `.env` file by copying the `.env-example` file and modify the values with your environment:
 
 ```bash
-$ make copy-env
+$ make env
 ```
 
 ### Load environment variables in Makefile
