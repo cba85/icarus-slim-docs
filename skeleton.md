@@ -1,6 +1,6 @@
 # Skeleton
 
-The architecture of the framework follows the rules of [pds/skeleton](https://github.com/php-pds/skeleton) the standard filesystem skeleton suitable for all PHP packages mixed with the ones of [Ruby on Rails](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application) for a web application.
+The skeleton of the framework, located [here](https://github.com/cba85/icarus-slim), has an architecture that follows the rules of [pds/skeleton](https://github.com/php-pds/skeleton) the standard filesystem skeleton suitable for all PHP packages mixed with the ones of [Ruby on Rails](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application) for a web application.
 
 ## Architecture
 
@@ -25,7 +25,7 @@ src/
 ├── Helpers/
 ├── Middleware/
 ├── Models/
-├── lib.php
+├── dependencies.php
 └── routes.php
 tests/
 tmp/
@@ -94,6 +94,10 @@ The helper functions are autoloaded by Composer.
 | Path | Description|
 |-|-|
 | `src/Middlewares/` | Middlewares folder |
+
+## Dependencies
+
+The dependencies are loaded in `src/dependencies.php` file.
 
 ## Views
 

@@ -1,5 +1,7 @@
 # Getting started
 
+First, to install Icarus Slim, you must download the skeleton of the framework, located [here](https://github.com/cba85/icarus-slim).
+
 ## Installation
 
 ```bash
