@@ -26,6 +26,7 @@ src/
 ├── Middleware/
 ├── Models/
 ├── dependencies.php
+├── middlewares.php
 └── routes.php
 tests/
 tmp/
@@ -94,10 +95,13 @@ The helper functions are autoloaded by Composer.
 | Path | Description|
 |-|-|
 | `src/Middlewares/` | Middlewares folder |
+| `src/middlewares.php` | Register middlewares |
 
 ## Dependencies
 
-The dependencies are loaded in `src/dependencies.php` file.
+| Path | Description|
+|-|-|
+| `src/dependencies.php` | DIC configuration |
 
 ## Views
 
