@@ -227,7 +227,7 @@ $app->add(new \Slim\Csrf\Guard);
 
 For validation, this framework uses [Respect/Validation](https://github.com/Respect/Validation).
 
-📖 [Respect Validation documentation](https://github.com/Respect/Validation)
+📖 [Documentation](https://github.com/Respect/Validation)
 
 ## Sitemap
 
@@ -248,6 +248,26 @@ By default, a route is created in `src/routes.php` and a controller `SitemapCont
     ```
 
 The sitemap file `sitemap.xml` is created in `public/` folder.
+
+## IP address
+
+To determine the client IP address, this framework uses [akrabat/ip-address-middleware](https://github.com/akrabat/ip-address-middleware/).
+
+📖 [Documentation](https://github.com/akrabat/ip-address-middleware/)
+
+### Usage
+
+```php
+$checkProxyHeaders = true; // Note: Never trust the IP address for security processes!
+$trustedProxies = ['10.0.0.1', '10.0.0.2']; // Note: Never trust the IP address for security processes!
+$app->add(new RKA\Middleware\IpAddress($checkProxyHeaders, $trustedProxies));
+
+$app->get('/', function ($request, $response, $args) {
+    $ipAddress = $request->getAttribute('ip_address');
+
+    return $response;
+});
+```
 
 ## Tests
 
