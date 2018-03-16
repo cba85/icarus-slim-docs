@@ -93,7 +93,9 @@ $container['view'];
 
 ```php
 // Display a view
-return $this->view($response, 'index.html');
+return $this->renderView($response, 'index.html');
+// Fetch a view file
+return $this->fetchView($filename, $params);
 ```
 
 ## Logging
