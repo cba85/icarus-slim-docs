@@ -289,6 +289,8 @@ This framework use [tboronczyk/localization-middleware](https://github.com/tboro
 
 📖 [Documentation](https://github.com/tboronczyk/localization-middleware)
 
+ℹ️ Localization is not activated by default.
+
 ### Usage
 
 1. Uncomment in `src/middlewares.php`:
