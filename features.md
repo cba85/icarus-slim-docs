@@ -223,9 +223,8 @@ $app->add(new \Slim\Csrf\Guard);
 
 ## Validation
 
-For validation, this framework uses [Slim Validation](https://github.com/DavidePastore/Slim-Validation), that internally uses [Respect/Validation](https://github.com/Respect/Validation).
+For validation, this framework uses [Respect/Validation](https://github.com/Respect/Validation).
 
-📖 [Slim Validation documentation](https://github.com/DavidePastore/Slim-Validation)<br>
 📖 [Respect Validation documentation](https://github.com/Respect/Validation)
 
 ## Sitemap
