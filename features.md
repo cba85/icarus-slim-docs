@@ -16,6 +16,8 @@ To remove one of them, simply remove its dependency in the `src/lib.php` file of
 - [CSRF protection](#csrf-protection)
 - [Validation](#validation)
 - [Sitemap](#sitemap)
+- [Localization](#localization)
+- [IP address](#ip-address)
 - [Tests](#tests)
 
 ## dotenv
@@ -248,6 +250,34 @@ By default, a route is created in `src/routes.php` and a controller `SitemapCont
     ```
 
 The sitemap file `sitemap.xml` is created in `public/` folder.
+
+## Localization
+
+This framework use [tboronczyk/localization-middleware](https://github.com/tboronczyk/localization-middleware) for localization.
+
+📖 [Documentation](https://github.com/tboronczyk/localization-middleware)
+
+### Usage
+
+Uncomment in `src/middlewares.php`:
+
+```php
+use Boronczyk\LocalizationMiddleware;
+
+$availableLocales = ['en_US', 'fr_CA', 'es_MX', 'eo'];
+$defaultLocale = 'en_US';
+$app->add(new LocalizationMiddleware($availableLocales, $defaultLocale));
+```
+
+Add:
+
+```php
+$app->get('/', function ($req, $resp, $args) {
+    $attrs = $req->getAttributes();
+    $locale = $attrs['locale'];
+    return $resp->write("The locale is $locale.");
+});
+```
 
 ## IP address
 
