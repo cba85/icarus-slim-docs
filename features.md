@@ -15,6 +15,7 @@ To remove one of them, simply remove its dependency in the `src/lib.php` file of
 - [Basic authentification](#basic-authentification)
 - [CSRF protection](#csrf-protection)
 - [Validation](#validation)
+- [Datetime](#datetime)
 - [Sitemap](#sitemap)
 - [Mail](#mail)
 - [Localization](#localization)
@@ -231,6 +232,26 @@ $app->add(new \Slim\Csrf\Guard);
 For validation, this framework uses [Respect/Validation](https://github.com/Respect/Validation).
 
 📖 [Documentation](https://github.com/Respect/Validation)
+
+### Usage
+
+```php
+use Respect\Validation\Validator;
+```
+
+## Datetime
+
+This framework use [Carbon](https://github.com/briannesbitt/Carbon) to extend DateTime.
+
+📖 [Documentation](https://github.com/briannesbitt/Carbon)
+
+### Usage
+
+```php
+use Carbon\Carbon;
+
+printf("Now: %s", Carbon::now());
+```
 
 ## Sitemap
 
