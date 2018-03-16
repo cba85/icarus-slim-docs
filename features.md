@@ -16,6 +16,7 @@ To remove one of them, simply remove its dependency in the `src/lib.php` file of
 - [CSRF protection](#csrf-protection)
 - [Validation](#validation)
 - [Sitemap](#sitemap)
+- [Mail](#mail)
 - [Localization](#localization)
 - [IP address](#ip-address)
 - [Tests](#tests)
@@ -251,6 +252,37 @@ By default, a route is created in `src/routes.php` and a controller `SitemapCont
 
 The sitemap file `sitemap.xml` is created in `public/` folder.
 
+## Mail
+
+This framework send emails thanks to [Mailgun](https://www.mailgun.com) using the [official SDK for PHP](https://github.com/mailgun/mailgun-php).
+
+- 📖 [Package documentation](https://github.com/mailgun/mailgun-php)
+- 📖 [Documentation](https://documentation.mailgun.com)
+
+### Usage
+
+1. Set `.env` variables:
+
+    ```bash
+    MAILGUN_DOMAIN=
+    MAILGUN_PRIVATE_KEY=
+    ```
+
+2. Add:
+
+    ```php
+    use Icarus\Mail as Mail;
+
+    $mail = new Mail();
+    $params = [
+        'from' => 'john@appleseed.com',
+        'to' => 'test@test.com',
+        'subject' => 'Test',
+        'text' => "If you received this email, it means emails work on your website!"
+    ];
+    $mail->send($params);
+    ```
+
 ## Localization
 
 This framework use [tboronczyk/localization-middleware](https://github.com/tboronczyk/localization-middleware) for localization.
@@ -259,25 +291,25 @@ This framework use [tboronczyk/localization-middleware](https://github.com/tboro
 
 ### Usage
 
-Uncomment in `src/middlewares.php`:
+1. Uncomment in `src/middlewares.php`:
 
-```php
-use Boronczyk\LocalizationMiddleware;
+    ```php
+    use Boronczyk\LocalizationMiddleware;
 
-$availableLocales = ['en_US', 'fr_CA', 'es_MX', 'eo'];
-$defaultLocale = 'en_US';
-$app->add(new LocalizationMiddleware($availableLocales, $defaultLocale));
-```
+    $availableLocales = ['en_US', 'fr_CA', 'es_MX', 'eo'];
+    $defaultLocale = 'en_US';
+    $app->add(new LocalizationMiddleware($availableLocales, $defaultLocale));
+    ```
 
-Add:
+2. Add:
 
-```php
-$app->get('/', function ($req, $resp, $args) {
-    $attrs = $req->getAttributes();
-    $locale = $attrs['locale'];
-    return $resp->write("The locale is $locale.");
-});
-```
+    ```php
+    $app->get('/', function ($req, $resp, $args) {
+        $attrs = $req->getAttributes();
+        $locale = $attrs['locale'];
+        return $resp->write("The locale is $locale.");
+    });
+    ```
 
 ## IP address
 
