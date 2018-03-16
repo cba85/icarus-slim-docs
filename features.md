@@ -156,7 +156,7 @@ This feature has a dependency in Slim container in `src/lib.php` file.
 $container['flash'];
 ```
 
-## Usage
+### Usage
 
 Using controller helper:
 
