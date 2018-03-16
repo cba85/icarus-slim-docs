@@ -255,6 +255,8 @@ To determine the client IP address, this framework uses [akrabat/ip-address-midd
 
 📖 [Documentation](https://github.com/akrabat/ip-address-middleware/)
 
+ℹ️ Client IP address determination is not activated by default.
+
 ### Usage
 
 ```php
