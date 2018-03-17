@@ -120,12 +120,7 @@ $ make [command]
 
 Use `help` to list available commands.
 
-Scripts are categorized:
-- Serve the project
-- Tests
-- Sitemap
-- Minify css and js
-- Concat css and js
+➡️ [More informations about scripts in the Makefile](makefile.md)
 
 ### Sources
 

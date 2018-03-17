@@ -25,6 +25,7 @@ The framework is based on [Slim PHP micro framework](https://www.slimframework.c
 - [Install](install.md)
 - [Skeleton](skeleton.md)
 - [Features](features.md)
+- [Makefile](makefile.md)
 - [Deploy](deploy.md)
 
 ## Authors
