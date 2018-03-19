@@ -134,9 +134,9 @@ Using the package natively:
 
 ## Database
 
-For database connection, the framework uses [aura/sql](https://github.com/auraphp/Aura.Sql).
+For database connection, the framework uses [cba85/database](https://github.com/cba85/database).
 
-📖 [Documentation](https://github.com/auraphp/Aura.Sql/blob/3.x/docs/index.md)
+📖 [Documentation](https://github.com/cba85/database)
 
 ### Dependency
 
