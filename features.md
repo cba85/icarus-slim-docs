@@ -219,6 +219,32 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
 
 For authentification, this framework uses his own package.
 
+### Dependency
+
+This feature has a dependency in Slim container in `src/dependencies.php` file.
+
+```php
+$container['auth'];
+```
+
+This feature adds 2 global variables in Twig:
+
+```php
+ $view->getEnvironment()->addGlobal('auth', [
+        'check' => $container->auth->check(),
+        'user' => $container->auth->user()
+    ]);
+```
+
+### Usage
+
+```php
+$this->auth->check();
+$this->auth->user();
+$this->auth->attempt($email, $password);
+$this->auth->logout();
+```
+
 ## CSRF protection
 
 For flash messages, this framework uses [Slim CSRF](https://github.com/slimphp/Slim-Csrf).
