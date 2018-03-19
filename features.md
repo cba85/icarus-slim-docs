@@ -2,7 +2,7 @@
 
 This framework comes with all the basic features to create a website/web application.
 
-To remove one of them, simply remove its dependency in the `src/lib.php` file of the skeleton.
+To remove one of them, simply remove its dependency in the `src/dependencies.php` file of the skeleton.
 
 ## Index
 
@@ -13,6 +13,7 @@ To remove one of them, simply remove its dependency in the `src/lib.php` file of
 - [Database](#database)
 - [Flash messages](#flash-messages)
 - [Basic authentification](#basic-authentification)
+- [Authentification](#authentification)
 - [CSRF protection](#csrf-protection)
 - [Validation](#validation)
 - [Datetime](#datetime)
@@ -36,7 +37,7 @@ The framework use config files located in `config/` folder thanks to [hassankhan
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['config'];
@@ -74,20 +75,20 @@ $this->config->all();
 
 ## Templating
 
-For templating, the framework uses [Twig](https://twig.symfony.com) library.
+For templating, the framework uses [Twig](https://twig.symfony.com) dependenciesrary.
 
 📖 [Documentation](https://twig.symfony.com/doc/2.x/)
 
 The framework uses 2 add-ons for Twig:
 
-| Library | Description |
+| dependenciesrary | Description |
 | ------- | ----------- |
 | [Slim Twig view](https://github.com/slimphp/Twig-View) | Slim Framework view layer built on top of Twig |
 | [Slim Twig Flash](https://github.com/kanellov/slim-twig-flash) | Twig extension for rendering slim flash messages |
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['view'];
@@ -104,13 +105,13 @@ return $this->fetchView($filename, $params);
 
 ## Logging
 
-For logging, the framework uses [Monolog](https://github.com/Seldaek/monolog) library.
+For logging, the framework uses [Monolog](https://github.com/Seldaek/monolog) dependenciesrary.
 
 📖 [Documentation](https://github.com/Seldaek/monolog/tree/master/doc)
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['logger'];
@@ -134,16 +135,20 @@ Using the package natively:
 
 ## Database
 
-For database connection, the framework uses [cba85/database](https://github.com/cba85/database).
-
-📖 [Documentation](https://github.com/cba85/database)
+For database connection, the framework uses his own package.
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['db'];
+```
+
+### Usage
+
+```php
+$posts = $this->db->fetchAll('SELECT * FROM posts');
 ```
 
 ## Flash messages
@@ -156,7 +161,7 @@ The framework uses [Slim Twig Flash](https://github.com/kanellov/slim-twig-flash
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['flash'];
@@ -197,7 +202,7 @@ For basic authentification, this framework uses [Slim Basic Auth](https://github
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 To activate the basic authentification, just uncomment the dedicated code to add the middleware:
 
@@ -210,6 +215,10 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
 ]));
 ```
 
+## Authentification
+
+For authentification, this framework uses his own package.
+
 ## CSRF protection
 
 For flash messages, this framework uses [Slim CSRF](https://github.com/slimphp/Slim-Csrf).
@@ -218,7 +227,7 @@ For flash messages, this framework uses [Slim CSRF](https://github.com/slimphp/S
 
 ### Dependency
 
-This feature has a dependency in Slim container in `src/lib.php` file.
+This feature has a dependency in Slim container in `src/dependencies.php` file.
 
 ```php
 $container['csrf'];
