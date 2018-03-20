@@ -19,6 +19,7 @@ To remove one of them, simply remove its dependency in the `src/dependencies.php
 - [Datetime](#datetime)
 - [Sitemap](#sitemap)
 - [Mail](#mail)
+- [Cookie](#cookie)
 - [Localization](#localization)
 - [IP address](#ip-address)
 - [Tests](#tests)
@@ -338,6 +339,19 @@ This framework send emails thanks to [Mailgun](https://www.mailgun.com) using th
     ];
     $mail->send($params);
     ```
+
+## Cookie
+
+This framework use his own cookie jar package.
+
+### Usage
+
+```php
+use Icarus\Cookie;
+
+$cookie = new Cookie;
+$cookie->set('test', 1);
+```
 
 ## Localization
 
